@@ -1,4 +1,4 @@
-package com.tsongkha.spinnerdatepicker;
+package com.magnox.spinnerdatepicker;
 
 /**
  * Created by David on 25/11/2017.

@@ -1,4 +1,4 @@
-package com.tsongkha.spinnerdatepicker;
+package com.magnox.spinnerdatepicker;
 
 import android.content.Context;
 import android.content.DialogInterface;

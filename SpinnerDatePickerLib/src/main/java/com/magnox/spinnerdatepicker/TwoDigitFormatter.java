@@ -1,4 +1,4 @@
-package com.tsongkha.spinnerdatepicker;
+package com.magnox.spinnerdatepicker;
 
 import android.widget.NumberPicker;
 

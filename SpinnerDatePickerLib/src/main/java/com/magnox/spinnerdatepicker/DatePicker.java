@@ -1,4 +1,4 @@
-package com.tsongkha.spinnerdatepicker;
+package com.magnox.spinnerdatepicker;
 /* Fork of Oreo DatePickerSpinnerDelegate
  *
  * Original class is Copyright (C) 2016 The Android Open Source Project

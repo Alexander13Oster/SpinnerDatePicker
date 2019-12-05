@@ -1,11 +1,5 @@
-package com.tsongkha.spinnerdatepickerexample;
+package com.magnox.spinnerdatepickerexample;
 
-import androidx.test.espresso.NoMatchingViewException;
-import androidx.test.espresso.UiController;
-import androidx.test.espresso.ViewAction;
-import androidx.test.espresso.ViewAssertion;
-import androidx.test.espresso.action.ViewActions;
-import androidx.test.espresso.matcher.ViewMatchers;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.NumberPicker;
@@ -14,7 +8,13 @@ import org.hamcrest.Matcher;
 
 import java.lang.reflect.Field;
 
-import static androidx.test.espresso.Espresso.onView;
+import androidx.test.espresso.NoMatchingViewException;
+import androidx.test.espresso.UiController;
+import androidx.test.espresso.ViewAction;
+import androidx.test.espresso.ViewAssertion;
+import androidx.test.espresso.action.ViewActions;
+import androidx.test.espresso.matcher.ViewMatchers;
+
 import static junit.framework.Assert.assertEquals;
 
 /**
@@ -50,7 +50,7 @@ class NumberPickers {
             @Override
             public void perform(UiController uiController, View view) {
                 NumberPicker np = (NumberPicker) view;
-                EditText et = com.tsongkha.spinnerdatepicker.NumberPickers.findEditText(np);
+                EditText et = com.magnox.spinnerdatepicker.NumberPickers.findEditText(np);
                 ViewActions.typeText(value).perform(uiController, et);
                 ViewActions.closeSoftKeyboard();
             }

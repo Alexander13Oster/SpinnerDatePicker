@@ -1,15 +1,15 @@
-package com.tsongkha.spinnerdatepickerexample;
+package com.magnox.spinnerdatepickerexample;
 
-import androidx.test.espresso.matcher.ViewMatchers;
-import androidx.test.rule.ActivityTestRule;
-import androidx.test.runner.AndroidJUnit4;
-
-import com.tsongkha.spinnerdatepicker.SpinnerDatePickerDialogBuilder;
+import com.magnox.spinnerdatepicker.SpinnerDatePickerDialogBuilder;
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import androidx.test.espresso.matcher.ViewMatchers;
+import androidx.test.rule.ActivityTestRule;
+import androidx.test.runner.AndroidJUnit4;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -45,15 +45,15 @@ public class MainActivityTest {
         onView(withId(R.id.set_date_button)).perform(click());
 
         //assert
-        onView(withId(com.tsongkha.spinnerdatepicker.R.id.datePickerContainer))
+        onView(withId(com.magnox.spinnerdatepicker.R.id.datePickerContainer))
                 .check(matches(isCompletelyDisplayed()));
-        onView(withId(com.tsongkha.spinnerdatepicker.R.id.parent))
+        onView(withId(com.magnox.spinnerdatepicker.R.id.parent))
                 .check(matches(isCompletelyDisplayed()));
-        onView(withId(com.tsongkha.spinnerdatepicker.R.id.year))
+        onView(withId(com.magnox.spinnerdatepicker.R.id.year))
                 .check(NumberPickers.isDisplayed("1980"));
-        onView(withId(com.tsongkha.spinnerdatepicker.R.id.month))
+        onView(withId(com.magnox.spinnerdatepicker.R.id.month))
                 .check(NumberPickers.isDisplayed("Jan"));
-        onView(withId(com.tsongkha.spinnerdatepicker.R.id.day))
+        onView(withId(com.magnox.spinnerdatepicker.R.id.day))
                 .check(NumberPickers.isDisplayed("1"));
         onView(withClassName(containsString("DialogTitle"))).check(
                 matches(withText("January 1, 1980")));
@@ -154,15 +154,15 @@ public class MainActivityTest {
         });
 
         //assert
-        onView(withId(com.tsongkha.spinnerdatepicker.R.id.datePickerContainer))
+        onView(withId(com.magnox.spinnerdatepicker.R.id.datePickerContainer))
                 .check(matches(isCompletelyDisplayed()));
-        onView(withId(com.tsongkha.spinnerdatepicker.R.id.parent))
+        onView(withId(com.magnox.spinnerdatepicker.R.id.parent))
                 .check(matches(isCompletelyDisplayed()));
-        onView(withId(com.tsongkha.spinnerdatepicker.R.id.year))
+        onView(withId(com.magnox.spinnerdatepicker.R.id.year))
                 .check(NumberPickers.isDisplayed("1970"));
-        onView(withId(com.tsongkha.spinnerdatepicker.R.id.month))
+        onView(withId(com.magnox.spinnerdatepicker.R.id.month))
                 .check(NumberPickers.isDisplayed("Dec"));
-        onView(withId(com.tsongkha.spinnerdatepicker.R.id.day))
+        onView(withId(com.magnox.spinnerdatepicker.R.id.day))
                 .check(NumberPickers.isDisplayed("31"));
         onView(withClassName(containsString("DialogTitle"))).check(
                 matches(withText("December 31, 1970")));
@@ -177,9 +177,9 @@ public class MainActivityTest {
             }
         });
 
-        onView(withId(com.tsongkha.spinnerdatepicker.R.id.month))
+        onView(withId(com.magnox.spinnerdatepicker.R.id.month))
                 .perform(NumberPickers.scroll(SCROLL_DOWN));
-        onView(withId(com.tsongkha.spinnerdatepicker.R.id.day))
+        onView(withId(com.magnox.spinnerdatepicker.R.id.day))
                 .check(NumberPickers.isDisplayed("29"));
         onView(withClassName(containsString("DialogTitle"))).check(
                 matches(withText("February 29, 1980")));
@@ -194,9 +194,9 @@ public class MainActivityTest {
             }
         });
 
-        onView(withId(com.tsongkha.spinnerdatepicker.R.id.year))
+        onView(withId(com.magnox.spinnerdatepicker.R.id.year))
                 .perform(NumberPickers.scroll(SCROLL_DOWN));
-        onView(withId(com.tsongkha.spinnerdatepicker.R.id.day))
+        onView(withId(com.magnox.spinnerdatepicker.R.id.day))
                 .check(NumberPickers.isDisplayed("1"));
         onView(withClassName(containsString("DialogTitle"))).check(
                 matches(withText("March 1, 1981")));
