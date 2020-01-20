@@ -1,4 +1,4 @@
-package com.magnox.spinnerdatepicker;
+package de.osterapps.spinnerdatepicker;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -7,7 +7,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+
 import java.text.DateFormat;
 import java.util.Calendar;
 
@@ -28,9 +31,9 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener,
     private final OnDateCancelListener mOnCancel;
     private final DateFormat mTitleDateFormat;
 
-    private boolean mIsDayShown = true;
-    private boolean mIsTitleShown = true;
-    private String mCustomTitle = "";
+    private boolean mIsDayShown;
+    private boolean mIsTitleShown;
+    private String mCustomTitle;
 
     /**
      * The callback used to indicate the user is done filling in the date.
@@ -68,12 +71,13 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener,
                      Calendar maxDate,
                      boolean isDayShown,
                      boolean isTitleShown,
-                     String customTitle) {
+                     String customTitle,
+                     @Nullable DateFormat customDateFormat) {
         super(context, theme);
 
         mCallBack = callBack;
         mOnCancel = onCancel;
-        mTitleDateFormat = DateFormat.getDateInstance(DateFormat.LONG);
+        mTitleDateFormat = customDateFormat != null ? customDateFormat : DateFormat.getDateInstance(DateFormat.LONG);
         mIsDayShown = isDayShown;
         mIsTitleShown = isTitleShown;
         mCustomTitle = customTitle;

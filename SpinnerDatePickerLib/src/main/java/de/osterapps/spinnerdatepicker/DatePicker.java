@@ -1,4 +1,4 @@
-package com.magnox.spinnerdatepicker;
+package de.osterapps.spinnerdatepicker;
 /* Fork of Oreo DatePickerSpinnerDelegate
  *
  * Original class is Copyright (C) 2016 The Android Open Source Project
@@ -47,8 +47,6 @@ import java.util.Locale;
  */
 public class DatePicker extends FrameLayout {
 
-    private static final String DATE_FORMAT = "MM/dd/yyyy";
-
     private static final boolean DEFAULT_ENABLED_STATE = true;
 
     private LinearLayout mPickerContainer;
@@ -70,8 +68,6 @@ public class DatePicker extends FrameLayout {
     private OnDateChangedListener mOnDateChangedListener;
 
     private String[] mShortMonths;
-
-    private final java.text.DateFormat mDateFormat = new SimpleDateFormat(DATE_FORMAT);
 
     private int mNumberOfMonths;
 
@@ -319,7 +315,7 @@ public class DatePicker extends FrameLayout {
         mPickerContainer.removeAllViews();
         // We use numeric spinners for year and day, but textual months. Ask icu4c what
         // order the user's locale uses for that combination. http://b/7207103.
-        String pattern = null;
+        String pattern;
         if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
             pattern = getOrderJellyBeanMr2();
         } else {

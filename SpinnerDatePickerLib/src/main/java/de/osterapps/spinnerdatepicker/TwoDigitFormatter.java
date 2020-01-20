@@ -1,4 +1,4 @@
-package com.magnox.spinnerdatepicker;
+package de.osterapps.spinnerdatepicker;
 
 import android.widget.NumberPicker;
 

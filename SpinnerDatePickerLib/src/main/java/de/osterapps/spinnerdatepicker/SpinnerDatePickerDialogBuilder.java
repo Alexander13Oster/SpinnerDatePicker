@@ -1,7 +1,8 @@
-package com.magnox.spinnerdatepicker;
+package de.osterapps.spinnerdatepicker;
 
 import android.content.Context;
 
+import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -13,6 +14,7 @@ public class SpinnerDatePickerDialogBuilder {
     private boolean isDayShown = true;
     private boolean isTitleShown = true;
     private String customTitle = "";
+    private DateFormat customDateFormat;
     private int theme = 0;                 //default theme
     private int spinnerTheme = 0;          //default theme
     private Calendar defaultDate = new GregorianCalendar(1980, 0, 1);
@@ -55,8 +57,18 @@ public class SpinnerDatePickerDialogBuilder {
         return this;
     }
 
+    public SpinnerDatePickerDialogBuilder minDateToday() {
+        this.minDate = new GregorianCalendar();
+        return this;
+    }
+
     public SpinnerDatePickerDialogBuilder maxDate(int year, int monthIndexedFromZero, int day) {
         this.maxDate = new GregorianCalendar(year, monthIndexedFromZero, day);
+        return this;
+    }
+
+    public SpinnerDatePickerDialogBuilder maxDateToday() {
+        this.maxDate = new GregorianCalendar();
         return this;
     }
 
@@ -75,10 +87,15 @@ public class SpinnerDatePickerDialogBuilder {
         return this;
     }
 
+    public SpinnerDatePickerDialogBuilder customDateFormat(DateFormat dateFormat) {
+        this.customDateFormat = dateFormat;
+        return this;
+    }
+
     public DatePickerDialog build() {
         if (context == null) throw new IllegalArgumentException("Context must not be null");
         if (maxDate.getTime().getTime() <= minDate.getTime().getTime()) throw new IllegalArgumentException("Max date is not after Min date");
 
-        return new DatePickerDialog(context, theme, spinnerTheme, callBack, onCancel, defaultDate, minDate, maxDate, isDayShown, isTitleShown, customTitle);
+        return new DatePickerDialog(context, theme, spinnerTheme, callBack, onCancel, defaultDate, minDate, maxDate, isDayShown, isTitleShown, customTitle, customDateFormat);
     }
 }

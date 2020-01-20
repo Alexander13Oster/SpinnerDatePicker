@@ -1,4 +1,4 @@
-package com.magnox.spinnerdatepicker;
+package de.osterapps.spinnerdatepicker;
 
 public class ICU {
 

@@ -1,4 +1,4 @@
-package com.magnox.spinnerdatepicker;
+package de.osterapps.spinnerdatepicker;
 
 /**
  * Created by David on 25/11/2017.

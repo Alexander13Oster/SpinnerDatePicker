@@ -1,4 +1,4 @@
-package com.magnox.spinnerdatepickerexample;
+package de.osterapps.spinnerdatepickerexample;
 
 import android.view.View;
 import android.widget.EditText;
@@ -50,7 +50,7 @@ class NumberPickers {
             @Override
             public void perform(UiController uiController, View view) {
                 NumberPicker np = (NumberPicker) view;
-                EditText et = com.magnox.spinnerdatepicker.NumberPickers.findEditText(np);
+                EditText et = de.osterapps.spinnerdatepicker.NumberPickers.findEditText(np);
                 ViewActions.typeText(value).perform(uiController, et);
                 ViewActions.closeSoftKeyboard();
             }

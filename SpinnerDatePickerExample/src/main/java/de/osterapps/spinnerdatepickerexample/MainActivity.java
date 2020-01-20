@@ -1,13 +1,13 @@
-package com.magnox.spinnerdatepickerexample;
+package de.osterapps.spinnerdatepickerexample;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.magnox.spinnerdatepicker.DatePicker;
-import com.magnox.spinnerdatepicker.DatePickerDialog;
-import com.magnox.spinnerdatepicker.SpinnerDatePickerDialogBuilder;
+import de.osterapps.spinnerdatepicker.DatePicker;
+import de.osterapps.spinnerdatepicker.DatePickerDialog;
+import de.osterapps.spinnerdatepicker.SpinnerDatePickerDialogBuilder;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -32,9 +32,9 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        dateButton = (Button) findViewById(R.id.set_date_button);
-        dateTextView = (TextView) findViewById(R.id.date_textview);
-        simpleDateFormat = new SimpleDateFormat("dd MM yyyy", Locale.US);
+        dateButton = findViewById(R.id.set_date_button);
+        dateTextView = findViewById(R.id.date_textview);
+        simpleDateFormat = new SimpleDateFormat("MMMM d, yyyy", Locale.US);
         dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +62,9 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                 .callback(MainActivity.this)
                 .onCancel(MainActivity.this)
                 .spinnerTheme(spinnerTheme)
+                .customDateFormat(simpleDateFormat)
                 .defaultDate(year, monthOfYear, dayOfMonth)
+                //.minDateToday()
                 .build()
                 .show();
     }

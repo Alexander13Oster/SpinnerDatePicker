@@ -1,4 +1,4 @@
-[![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=18) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SpinnerDatePicker-red.svg?style=plastic)](https://android-arsenal.com/details/1/6319) [![Release](https://jitpack.io/v/magnox/SpinnerDatePicker.svg)](https://jitpack.io/#magnox/SpinnerDatePicker)
+[![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=18) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SpinnerDatePicker-red.svg?style=plastic)](https://android-arsenal.com/details/1/6319) [![Release](https://jitpack.io/v/Alexander13Oster/SpinnerDatePicker.svg)](https://jitpack.io/#Alexander13Oster/SpinnerDatePicker)
 
 Spinner DatePicker
 -----
@@ -66,7 +66,7 @@ Add this to your **app level** `build.gradle`:
     
    ```gradle
    dependencies {
-       compile 'com.github.magnox:SpinnerDatePicker:2.0.2'
+       compile 'com.github.Alexander13Oster:SpinnerDatePicker:2.2.0'
    }
    ```             
 
